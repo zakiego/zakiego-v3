@@ -19,7 +19,7 @@ export default function Newsletter({ newsletters }) {
           on and writing about. I frequently share some of my favorite articles
           I've read, as well as anything fascinating about technology.
         </p>
-        <Subscribe />
+        {/* <Subscribe /> */}
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
           Archive
         </h3>
