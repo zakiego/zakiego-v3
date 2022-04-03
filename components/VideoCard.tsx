@@ -7,18 +7,18 @@ export default function VideoCard({ href, length, title, index }) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="w-full border-b border-gray-200 dark:border-gray-700 py-3 transform hover:scale-[1.01] transition-all">
-        <div className="flex flex-col sm:flex-row justify-between items-baseline">
+      <div className="w-full transform border-b border-gray-200 py-3 transition-all hover:scale-[1.01] dark:border-gray-700">
+        <div className="flex flex-col items-baseline justify-between sm:flex-row">
           <div className="flex items-center">
-            <div className="text-gray-300 dark:text-gray-400 text-left mr-6">
+            <div className="mr-6 text-left text-gray-300 dark:text-gray-400">
               {index}
             </div>
-            <h4 className="text-lg font-medium w-full text-gray-800 dark:text-gray-100">
+            <h4 className="w-full text-lg font-medium text-gray-800 dark:text-gray-100">
               {title}
             </h4>
           </div>
-          <div className="flex items-center mt-2 sm:mt-0 w-full sm:w-auto justify-between">
-            <p className="text-gray-500 dark:text-gray-400 text-left sm:text-right w-32 md:mb-0 mr-2 ml-10 sm:ml-0">
+          <div className="mt-2 flex w-full items-center justify-between sm:mt-0 sm:w-auto">
+            <p className="mr-2 ml-10 w-32 text-left text-gray-500 dark:text-gray-400 sm:ml-0 sm:text-right md:mb-0">
               {length}
             </p>
             <svg

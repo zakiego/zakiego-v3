@@ -1,8 +1,7 @@
-import useSWR from 'swr';
-
+import MetricCard from 'components/metrics/Card';
 import fetcher from 'lib/fetcher';
 import { Subscribers } from 'lib/types';
-import MetricCard from 'components/metrics/Card';
+import useSWR from 'swr';
 
 export default function NewsletterCard() {
   const { data } = useSWR<Subscribers>('/api/subscribers', fetcher);

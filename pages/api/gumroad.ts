@@ -1,5 +1,5 @@
-import type { NextApiRequest, NextApiResponse } from 'next';
 import Big from 'big.js';
+import type { NextApiRequest, NextApiResponse } from 'next';
 
 const getProductSales = async (id) => {
   const response = await fetch(`https://api.gumroad.com/v2/products/${id}`, {

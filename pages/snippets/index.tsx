@@ -1,6 +1,6 @@
-import { allSnippets } from 'contentlayer/generated';
 import Container from 'components/Container';
 import FunctionCard from 'components/FunctionCard';
+import { allSnippets } from 'contentlayer/generated';
 import { pick } from 'lib/utils';
 import type { InferGetStaticPropsType } from 'next';
 
@@ -12,8 +12,8 @@ export default function Snippets({
       title="Code Snippets – Lee Robinson"
       description="A collection of code snippets – including serverless functions, Node.js scripts, and CSS tricks."
     >
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           Code Snippets
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
@@ -22,7 +22,7 @@ export default function Snippets({
           instructions. Others are anything from random CSS snippets to Node.js
           scripts.
         </p>
-        <div className="grid w-full grid-cols-1 gap-4 my-2 mt-4 sm:grid-cols-2">
+        <div className="my-2 mt-4 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
           {snippets.map((snippet) => (
             <FunctionCard
               key={snippet.slug}

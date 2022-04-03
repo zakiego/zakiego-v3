@@ -1,4 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document(props) {
   return (
@@ -52,7 +52,7 @@ export default function Document(props) {
           name="google-site-verification"
         />
       </Head>
-      <body className="bg-white dark:bg-black text-white dark:text-black">
+      <body className="bg-white text-white dark:bg-black dark:text-black">
         <Main />
         <NextScript />
       </body>

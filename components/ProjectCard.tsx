@@ -19,12 +19,12 @@ export default function ProjectCard({ title, description, href, icon }) {
       target="_blank"
       rel="noopener noreferrer"
     >
-      <div className="flex items-center border border-gray-200 dark:border-gray-800 rounded p-4">
+      <div className="flex items-center rounded border border-gray-200 p-4 dark:border-gray-800">
         {icon == 'react2025' && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="ml-2 mr-4 h-8 w-8">
             <span className="sr-only">React 2025</span>
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="min-w-sm h-8 w-8 text-gray-900 dark:text-gray-100"
               viewBox="0 0 267 305"
             >
               <g fill="currentColor">
@@ -34,10 +34,10 @@ export default function ProjectCard({ title, description, href, icon }) {
           </div>
         )}
         {icon == 'nextjs' && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="ml-2 mr-4 h-8 w-8">
             <span className="sr-only">Learn Next.js</span>
             <svg
-              className="h-8 w-8 min-w-lg text-gray-900 dark:text-gray-100"
+              className="min-w-lg h-8 w-8 text-gray-900 dark:text-gray-100"
               viewBox=".5 -.2 1023 1024.1"
             >
               <g fill="currentColor">
@@ -48,10 +48,10 @@ export default function ProjectCard({ title, description, href, icon }) {
           </div>
         )}
         {icon == 'fastfeedback' && (
-          <div className="h-8 w-8 ml-2 mr-4">
+          <div className="ml-2 mr-4 h-8 w-8">
             <span className="sr-only">Fast Feedback</span>
             <svg
-              className="h-8 w-8 min-w-sm text-gray-900 dark:text-gray-100"
+              className="min-w-sm h-8 w-8 text-gray-900 dark:text-gray-100"
               viewBox="0 0 46 32"
             >
               <path

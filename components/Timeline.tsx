@@ -2,13 +2,13 @@ import { useState } from 'react';
 
 const Divider = () => {
   return (
-    <div className="border border-gray-200 dark:border-gray-600 w-full my-8" />
+    <div className="my-8 w-full border border-gray-200 dark:border-gray-600" />
   );
 };
 
 const Year = ({ children }) => {
   return (
-    <h3 className="text-lg md:text-xl font-bold mb-4 tracking-tight text-gray-900 dark:text-gray-100">
+    <h3 className="mb-4 text-lg font-bold tracking-tight text-gray-900 dark:text-gray-100 md:text-xl">
       {children}
     </h3>
   );
@@ -17,9 +17,9 @@ const Year = ({ children }) => {
 const Step = (props) => {
   return (
     <li className="mb-4 ml-2">
-      <div className="flex items-center mb-2 text-green-700 dark:text-green-300">
+      <div className="mb-2 flex items-center text-green-700 dark:text-green-300">
         <span className="sr-only">Check</span>
-        <svg className="h-4 w-4 mr-2" viewBox="0 0 24 24">
+        <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24">
           <g
             fill="none"
             stroke="currentColor"
@@ -35,7 +35,7 @@ const Step = (props) => {
           {props.title}
         </p>
       </div>
-      <p className="text-gray-700 dark:text-gray-400 ml-6">{props.children}</p>
+      <p className="ml-6 text-gray-700 dark:text-gray-400">{props.children}</p>
     </li>
   );
 };
@@ -153,7 +153,7 @@ export default function Timeline() {
 
   return (
     <>
-      <h3 className="font-bold text-2xl md:text-4xl tracking-tight mb-4 mt-8 text-black dark:text-white">
+      <h3 className="mb-4 mt-8 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Timeline
       </h3>
       <Year>2021</Year>
@@ -228,12 +228,12 @@ export default function Timeline() {
       ) : (
         <button
           type="button"
-          className="flex items-center text-sm my-4 mx-auto px-4 py-2 rounded-md font-medium text-gray-900 dark:text-gray-100"
+          className="my-4 mx-auto flex items-center rounded-md px-4 py-2 text-sm font-medium text-gray-900 dark:text-gray-100"
           onClick={() => showFullTimeline(true)}
         >
           See More
           <svg
-            className="h-4 w-4 ml-1"
+            className="ml-1 h-4 w-4"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"

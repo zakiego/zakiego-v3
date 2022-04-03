@@ -8,11 +8,11 @@ export default function Tweets({ tweets }) {
       title="Tweets – Lee Robinson"
       description="A collection of tweets that inspire me, make me laugh, and make me think."
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           Tweets
         </h1>
-        <p className="text-gray-600 dark:text-gray-400 mb-4">
+        <p className="mb-4 text-gray-600 dark:text-gray-400">
           This is a collection of tweets I've enjoyed. I use Twitter quite a
           bit, so I wanted a place to publicly share what inspires me, makes me
           laugh, and makes me think.

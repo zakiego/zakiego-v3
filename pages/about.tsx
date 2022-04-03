@@ -1,9 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-
 import Container from 'components/Container';
+import Image from 'next/image';
+import Link from 'next/link';
 import avatar from 'public/avatar.jpg';
 import avatarBW from 'public/avatar-bw.jpg';
+
 import { siteconfig } from '~/siteconfig';
 
 export default function About() {
@@ -11,11 +11,11 @@ export default function About() {
 
   return (
     <Container title="About – Lee Robinson">
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <div className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           About Me
         </h1>
-        <div className="mb-8 prose dark:prose-dark leading-6">
+        <div className="prose mb-8 leading-6 dark:prose-dark">
           <h2>Links</h2>
 
           <ul>

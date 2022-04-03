@@ -1,8 +1,7 @@
-import useSWR from 'swr';
-
+import MetricCard from 'components/metrics/Card';
 import fetcher from 'lib/fetcher';
 import { Unsplash } from 'lib/types';
-import MetricCard from 'components/metrics/Card';
+import useSWR from 'swr';
 
 export default function UnsplashCard() {
   const { data } = useSWR<Unsplash>('/api/unsplash', fetcher);
@@ -12,7 +11,7 @@ export default function UnsplashCard() {
   const link = 'https://unsplash.com/@leerob';
 
   return (
-    <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 my-2 w-full">
+    <div className="my-2 grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
       <MetricCard
         header="Unsplash Downloads"
         link={link}

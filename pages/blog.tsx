@@ -1,10 +1,9 @@
-import { useState } from 'react';
-
-import Container from 'components/Container';
 import BlogPost from 'components/BlogPost';
-import { InferGetStaticPropsType } from 'next';
-import { pick } from 'lib/utils';
+import Container from 'components/Container';
 import { allBlogs } from 'contentlayer/generated';
+import { pick } from 'lib/utils';
+import { InferGetStaticPropsType } from 'next';
+import { useState } from 'react';
 
 export default function Blog({
   posts
@@ -19,8 +18,8 @@ export default function Blog({
       title="Blog – Lee Robinson"
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
-      <div className="flex flex-col items-start justify-center max-w-2xl mx-auto mb-16">
-        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black md:text-5xl dark:text-white">
+      <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
+        <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           Blog
         </h1>
         <p className="mb-4 text-gray-600 dark:text-gray-400">
@@ -28,16 +27,16 @@ export default function Blog({
             In total, I've written ${posts.length} articles on my blog.
             Use the search below to filter by title.`}
         </p>
-        <div className="relative w-full mb-4">
+        <div className="relative mb-4 w-full">
           <input
             aria-label="Search articles"
             type="text"
             onChange={(e) => setSearchValue(e.target.value)}
             placeholder="Search articles"
-            className="block w-full px-4 py-2 text-gray-900 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100"
+            className="block w-full rounded-md border border-gray-200 bg-white px-4 py-2 text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
           />
           <svg
-            className="absolute w-5 h-5 text-gray-400 right-3 top-3 dark:text-gray-300"
+            className="absolute right-3 top-3 h-5 w-5 text-gray-400 dark:text-gray-300"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -53,7 +52,7 @@ export default function Blog({
         </div>
         {!searchValue && (
           <>
-            <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+            <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
               Most Popular
             </h3>
             <BlogPost
@@ -73,7 +72,7 @@ export default function Blog({
             />
           </>
         )}
-        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black md:text-4xl dark:text-white">
+        <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           All Posts
         </h3>
         {!filteredBlogPosts.length && (
