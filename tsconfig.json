@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "incremental": true,
     "paths": {
+      "~/*": ["./*"],
       "contentlayer/generated": ["./.contentlayer/generated"]
     }
   },
