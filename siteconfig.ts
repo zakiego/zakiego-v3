@@ -1,5 +1,5 @@
 export const siteconfig = {
-  url: 'https://zakiego.my.id',
+  url: 'https://v3.zakiego.my.id',
   profile: {
     aka: 'Zakiego',
     name: 'M. Zakiyuddin Munziri',
