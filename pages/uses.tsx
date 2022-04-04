@@ -1,21 +1,22 @@
 import components from 'components/MDXComponents';
-import type { OtherPage } from 'contentlayer/generated';
+import type { Blog } from 'contentlayer/generated';
 import { allOtherPages } from 'contentlayer/generated';
-import UsesLayout from 'layouts/uses';
 import { useMDXComponent } from 'next-contentlayer/hooks';
 
-export default function Uses({ body: { code } }: OtherPage) {
-  const Component = useMDXComponent(code);
+import SimpleLayout from '~/layouts/simple';
+
+export default function Uses({ post }: { post: Blog }) {
+  const Component = useMDXComponent(post.body.code);
 
   return (
-    <UsesLayout>
+    <SimpleLayout post={post}>
       <Component components={components as any} />
-    </UsesLayout>
+    </SimpleLayout>
   );
 }
 
 export async function getStaticProps() {
-  const uses = allOtherPages.find((page) => page.slug === 'uses');
+  const post = allOtherPages.find((page) => page.slug === 'uses');
 
-  return { props: uses };
+  return { props: { post } };
 }
