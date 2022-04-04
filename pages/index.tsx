@@ -1,3 +1,4 @@
+import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -5,10 +6,12 @@ import { siteconfig } from '~/siteconfig';
 
 import BlogPostCard from '../components/BlogPostCard';
 import Container from '../components/Container';
-import Subscribe from '../components/Subscribe';
-import VideoCard from '../components/VideoCard';
+// import Subscribe from '../components/Subscribe';
+// import VideoCard from '../components/VideoCard';
 
-export default function Home({ videos }) {
+export default function Home({
+  posts
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container>
       <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
@@ -42,21 +45,16 @@ export default function Home({ videos }) {
           Featured Posts
         </h3>
         <div className="flex flex-col gap-6 md:flex-row">
-          <BlogPostCard
-            title="Everything I Know About Style Guides, Design Systems, and Component Libraries"
-            slug="style-guides-component-libraries-design-systems"
-            gradient="from-[#D8B4FE] to-[#818CF8]"
-          />
-          <BlogPostCard
-            title="Rust Is The Future of JavaScript Infrastructure"
-            slug="rust"
-            gradient="from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]"
-          />
-          <BlogPostCard
-            title="Past, Present, and Future of React State Management"
-            slug="react-state-management"
-            gradient="from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]"
-          />
+          {posts.map((post, id) => {
+            return (
+              <BlogPostCard
+                key={post.title}
+                title={post.title}
+                slug={post.slug}
+                gradient={gradient[id]}
+              />
+            );
+          })}
         </div>
         <Link href="/blog">
           <a className="mt-8 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
@@ -81,3 +79,20 @@ export default function Home({ videos }) {
     </Container>
   );
 }
+
+export async function getStaticProps() {
+  const posts = await fetch('https://v3.zakiego.my.id/api/blog')
+    .then((resp) => resp.json())
+    .then(({ data }) => data.slice(0, 3));
+
+  return {
+    props: { posts },
+    revalidate: 300 // In seconds
+  };
+}
+
+const gradient = [
+  'from-[#D8B4FE] to-[#818CF8]',
+  'from-[#6EE7B7] via-[#3B82F6] to-[#9333EA]',
+  'from-[#FDE68A] via-[#FCA5A5] to-[#FECACA]'
+];
