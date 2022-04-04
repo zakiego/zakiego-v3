@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { siteconfig } from '~/siteconfig';
+
 import BlogPostCard from '../components/BlogPostCard';
 import Container from '../components/Container';
 import Subscribe from '../components/Subscribe';
@@ -13,24 +15,26 @@ export default function Home({ videos }) {
         <div className="flex flex-col-reverse items-start sm:flex-row">
           <div className="flex flex-col pr-8">
             <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-              Lee Robinson
+              {siteconfig.profile.aka}
             </h1>
             <h2 className="mb-4 text-gray-700 dark:text-gray-200">
-              Director of Developer Relations at{' '}
-              <span className="font-semibold">Vercel</span>
+              {'// '}
+              {siteconfig.profile.name}
             </h2>
             <p className="mb-16 text-gray-600 dark:text-gray-400">
-              Helping developers build a faster web. Teaching about web
-              development, serverless, and React / Next.js.
+              {siteconfig.profile.shortDescription}{' '}
+              <span className="italic">Warga</span> Kalimantan Selatan,
+              Indonesia.
             </p>
           </div>
-          <div className="relative mb-8 mr-auto w-[80px] sm:mb-0 sm:w-[176px]">
+          <div className="relative mb-8 mr-auto w-[140px] sm:mb-0 sm:w-[200px]">
             <Image
-              alt="Lee Robinson"
-              height={176}
-              width={176}
+              alt={siteconfig.profile.name}
+              height={200}
+              width={200}
+              unoptimized={true}
               src="/avatar.jpg"
-              className="rounded-full grayscale filter"
+              className="rounded-full"
             />
           </div>
         </div>

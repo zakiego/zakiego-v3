@@ -1,11 +1,12 @@
 import Container from 'components/Container';
 import Guestbook from 'components/Guestbook';
 import prisma from 'lib/prisma';
+import { siteconfig } from '~/siteconfig';
 
 export default function GuestbookPage({ fallbackData }) {
   return (
     <Container
-      title="Guestbook – Lee Robinson"
+      title={`Guestbook – ${siteconfig.profile.name}`}>
       description="Sign my digital guestbook and share some wisdom."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">

@@ -7,6 +7,8 @@ import { useRouter } from 'next/router';
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
+import { siteconfig } from '~/siteconfig';
+
 function NavItem({ href, text }) {
   const router = useRouter();
   const isActive = router.asPath === href;
@@ -37,7 +39,7 @@ export default function Container(props) {
   const { children, ...customMeta } = props;
   const router = useRouter();
   const meta = {
-    title: 'Lee Robinson – Developer, writer, creator.',
+    title: `${siteconfig.profile.name} – Developer, writer, creator.`,
     description: `Front-end developer, JavaScript enthusiast, and course creator.`,
     image: 'https://leerob.io/static/images/banner.png',
     type: 'website',

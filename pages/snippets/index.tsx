@@ -4,12 +4,14 @@ import { allSnippets } from 'contentlayer/generated';
 import { pick } from 'lib/utils';
 import type { InferGetStaticPropsType } from 'next';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function Snippets({
   snippets
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <Container
-      title="Code Snippets – Lee Robinson"
+      title={`Code Snippets – ${siteconfig.profile.name}`}
       description="A collection of code snippets – including serverless functions, Node.js scripts, and CSS tricks."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">

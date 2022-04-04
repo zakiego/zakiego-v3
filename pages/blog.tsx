@@ -5,6 +5,8 @@ import { pick } from 'lib/utils';
 import { InferGetStaticPropsType } from 'next';
 import { useState } from 'react';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function Blog({
   posts
 }: InferGetStaticPropsType<typeof getStaticProps>) {
@@ -15,7 +17,7 @@ export default function Blog({
 
   return (
     <Container
-      title="Blog – Lee Robinson"
+      title={`Blog – ${siteconfig.profile.name}`}
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">

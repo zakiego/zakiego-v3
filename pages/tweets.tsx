@@ -2,10 +2,12 @@ import Container from 'components/Container';
 import Tweet from 'components/Tweet';
 import { getTweets } from 'lib/twitter';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function Tweets({ tweets }) {
   return (
     <Container
-      title="Tweets – Lee Robinson"
+      title={`Tweets – ${siteconfig.profile.name}`}
       description="A collection of tweets that inspire me, make me laugh, and make me think."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">

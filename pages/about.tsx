@@ -1,8 +1,8 @@
+/* eslint-disable react/no-unescaped-entities */
 import Container from 'components/Container';
 import Image from 'next/image';
 import Link from 'next/link';
 import avatar from 'public/avatar.jpg';
-import avatarBW from 'public/avatar-bw.jpg';
 
 import { siteconfig } from '~/siteconfig';
 
@@ -10,7 +10,7 @@ export default function About() {
   const { socials } = siteconfig;
 
   return (
-    <Container title="About – Lee Robinson">
+    <Container title={`About – ${siteconfig.profile.name}`}>
       <div className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           About Me
@@ -71,18 +71,22 @@ export default function About() {
               <Image
                 alt="Lee Robinson headshot"
                 width={400}
+                height={400}
                 quality={100}
+                unoptimized={true}
                 src={avatar}
                 className="rounded-md"
               />
             </a>
-            <a href="/avatar-bw.jpg">
+            <a href="/avatar.jpg">
               <Image
                 alt="Lee Robinson headshot"
                 width={400}
+                height={400}
+                unoptimized={true}
                 quality={100}
-                src={avatarBW}
-                className="rounded-md"
+                src={avatar}
+                className="rounded-md grayscale filter"
               />
             </a>
           </div>

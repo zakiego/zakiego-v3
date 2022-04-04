@@ -4,10 +4,12 @@ import Subscribe from 'components/Subscribe';
 import { allNewsletters } from 'contentlayer/generated';
 import { pick } from 'lib/utils';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function Newsletter({ newsletters }) {
   return (
     <Container
-      title="Newsletter – Lee Robinson"
+      title={`Newsletter – ${siteconfig.profile.name}`}
       description="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
