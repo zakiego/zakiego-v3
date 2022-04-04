@@ -15,7 +15,7 @@ export default function Uses({ body: { code } }: OtherPage) {
 }
 
 export async function getStaticProps() {
-  const uses = allOtherPages.find((page) => page.slug === 'uses')!;
+  const uses = allOtherPages.find((page) => page.slug === 'uses');
 
   return { props: uses };
 }
