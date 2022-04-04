@@ -1,9 +1,11 @@
 import Container from 'components/Container';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function UsesLayout({ children }) {
   return (
     <Container
-      title="Uses – Lee Robinson"
+      title={`Uses – ${siteconfig.profile.name}`}
       description="Here's what tech I'm currently using for coding, videos, and music."
     >
       <article className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">

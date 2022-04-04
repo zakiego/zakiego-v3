@@ -2,13 +2,15 @@ import Container from 'components/Container';
 import type { Blog } from 'contentlayer/generated';
 import type { PropsWithChildren } from 'react';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function SimpleLayout({
   children,
   post
 }: PropsWithChildren<{ post: Blog }>) {
   return (
     <Container
-      title={`${post.title} – Lee Robinson`}
+      title={`${post.title} – ${siteconfig.profile.name}`}
       description={post.summary}
     >
       <article className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">

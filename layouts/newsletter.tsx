@@ -5,13 +5,15 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import type { PropsWithChildren } from 'react';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function NewsletterLayout({
   children,
   newsletter
 }: PropsWithChildren<{ newsletter: Newsletter }>) {
   return (
     <Container
-      title={`${newsletter.title} – Lee Robinson`}
+      title={`${newsletter.title} – ${siteconfig.profile.name}`}
       description={newsletter.summary}
       date={new Date(newsletter.publishedAt).toISOString()}
       type="article"
@@ -23,14 +25,14 @@ export default function NewsletterLayout({
         <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex items-center">
             <Image
-              alt="Lee Robinson"
+              alt={siteconfig.profile.name}
               height={24}
               width={24}
               src="/avatar.jpg"
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {'Lee Robinson / '}
+              {`${siteconfig.profile.name} / `}
               {format(parseISO(newsletter.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>

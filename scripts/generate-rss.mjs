@@ -1,10 +1,11 @@
+import { siteconfig } from '~/siteconfig';
 import { writeFileSync } from 'fs';
 import RSS from 'rss';
 import { allBlogs } from '../.contentlayer/generated/allBlogs.mjs';
 
 async function generate() {
   const feed = new RSS({
-    title: 'Lee Robinson',
+    title: siteconfig.profile.name,
     site_url: 'https://leerob.io',
     feed_url: 'https://leerob.io/feed.xml'
   });

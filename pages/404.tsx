@@ -1,9 +1,11 @@
 import Container from 'components/Container';
 import Link from 'next/link';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function NotFound() {
   return (
-    <Container title="404 – Lee Robinson">
+    <Container title={`404 – ${siteconfig.profile.name}`}>
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
           451 – Unavailable For Legal Reasons

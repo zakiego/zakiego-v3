@@ -6,6 +6,8 @@ import { format, parseISO } from 'date-fns';
 import Image from 'next/image';
 import type { PropsWithChildren } from 'react';
 
+import { siteconfig } from '~/siteconfig';
+
 const editUrl = (slug) =>
   `https://github.com/leerob/leerob.io/edit/main/data/blog/${slug}.mdx`;
 const discussUrl = (slug) =>
@@ -19,7 +21,7 @@ export default function BlogLayout({
 }: PropsWithChildren<{ post: Blog }>) {
   return (
     <Container
-      title={`${post.title} – Lee Robinson`}
+      title={`${post.title} – ${siteconfig.profile.name}`}
       description={post.summary}
       image={`https://leerob.io${post.image}`}
       date={new Date(post.publishedAt).toISOString()}
@@ -32,14 +34,14 @@ export default function BlogLayout({
         <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex items-center">
             <Image
-              alt="Lee Robinson"
+              alt={siteconfig.profile.name}
               height={24}
               width={24}
               src="/avatar.jpg"
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">
-              {'Lee Robinson / '}
+              {`${siteconfig.profile.name} / `}
               {format(parseISO(post.publishedAt), 'MMMM dd, yyyy')}
             </p>
           </div>
