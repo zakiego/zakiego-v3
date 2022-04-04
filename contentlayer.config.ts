@@ -75,7 +75,8 @@ const OtherPage = defineDocumentType(() => ({
   filePathPattern: '*.mdx',
   contentType: 'mdx',
   fields: {
-    title: { type: 'string', required: true }
+    title: { type: 'string', required: true },
+    publishedAt: { type: 'string', required: true }
   },
   computedFields
 }));
