@@ -91,21 +91,9 @@ export default function Blog({
 }
 
 export async function getStaticProps() {
-  const posts = await fetch(
-    'https://api.factmaven.com/xml-to-json/?xml=https://blog.zakiego.my.id/feed.xml'
-  )
-    .then((resp) => resp.json())
-    .then(({ rss }) => rss.channel.item)
-    .then((item) =>
-      item.map((obj) => {
-        return {
-          title: obj.title,
-          slug: obj.link,
-          summary: obj.description || '',
-          pubDate: obj.pubDate
-        };
-      })
-    );
+  const posts = (
+    await fetch('https://v3.zakiego.my.id/api/blog').then((resp) => resp.json())
+  ).data;
 
   // const posts = allBlogs
   //   .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
