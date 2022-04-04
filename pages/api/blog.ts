@@ -11,14 +11,15 @@ export default async function handler(
     dataJSON = result;
   });
 
-  const result = dataJSON.rss.channel[0].item.map((obj) => {
+  const data = dataJSON.rss.channel[0].item.map((obj) => {
     return {
-      title: obj.title,
-      slug: obj.link,
-      summary: obj.description || '',
-      pubDate: obj.pubDate
+      title: obj.title[0],
+      slug: obj.link[0],
+      summary: obj.description ? obj.description[0] : '',
+      pubDate: obj.pubDate[0]
     };
   });
 
-  return res.json({ data: result });
+  return res.json({ data });
+  // return res.json({ data })
 }
