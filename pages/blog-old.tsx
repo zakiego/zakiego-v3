@@ -1,7 +1,7 @@
 import BlogPost from 'components/BlogPost';
 import Container from 'components/Container';
-// import { allBlogs } from 'contentlayer/generated';
-// import { pick } from 'lib/utils';
+import { allBlogs } from 'contentlayer/generated';
+import { pick } from 'lib/utils';
 import { InferGetStaticPropsType } from 'next';
 import { useState } from 'react';
 
@@ -52,7 +52,7 @@ export default function Blog({
             />
           </svg>
         </div>
-        {/* {!searchValue && (
+        {!searchValue && (
           <>
             <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
               Most Popular
@@ -73,7 +73,7 @@ export default function Blog({
               slug="monorepo-lerna-yarn-workspaces"
             />
           </>
-        )} */}
+        )}
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           All Posts
         </h3>
@@ -90,32 +90,13 @@ export default function Blog({
   );
 }
 
-export async function getStaticProps() {
-  const posts = await fetch(
-    'https://api.factmaven.com/xml-to-json/?xml=https://blog.zakiego.my.id/feed.xml'
-  )
-    .then((resp) => resp.json())
-    .then(({ rss }) => rss.channel.item)
-    .then((item) =>
-      item.map((obj) => {
-        return {
-          title: obj.title,
-          slug: obj.link,
-          summary: obj.description || '',
-          pubDate: obj.pubDate
-        };
-      })
+export function getStaticProps() {
+  const posts = allBlogs
+    .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
+    .sort(
+      (a, b) =>
+        Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
     );
 
-  // const posts = allBlogs
-  //   .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
-  //   .sort(
-  //     (a, b) =>
-  //       Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  //   );
-
-  return {
-    props: { posts },
-    revalidate: 300 // In seconds
-  };
+  return { props: { posts } };
 }
