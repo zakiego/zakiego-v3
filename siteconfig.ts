@@ -1,8 +1,11 @@
 export const siteconfig = {
+  url: 'https://zakiego.my.id',
   profile: {
     aka: 'Zakiego',
     name: 'M. Zakiyuddin Munziri',
-    shortDescription: 'Generalist. Fullstack developer. Social science student.'
+    shortDescription:
+      'Generalist. Fullstack developer. Social science student.',
+    twitter: '@prasastipagi'
   },
   menuMobile: [
     { display: 'Home', href: '/' },
