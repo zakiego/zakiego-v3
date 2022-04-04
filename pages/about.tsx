@@ -65,31 +65,6 @@ export default function About() {
             Lee Robinson graduated from Iowa State University with a BS in
             Computer Engineering.
           </p>
-          <h2>Headshots</h2>
-          <div className="flex space-x-8">
-            <a href="/avatar.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                height={400}
-                quality={100}
-                unoptimized={true}
-                src={avatar}
-                className="rounded-md"
-              />
-            </a>
-            <a href="/avatar.jpg">
-              <Image
-                alt="Lee Robinson headshot"
-                width={400}
-                height={400}
-                unoptimized={true}
-                quality={100}
-                src={avatar}
-                className="rounded-md grayscale filter"
-              />
-            </a>
-          </div>
         </div>
       </div>
     </Container>
