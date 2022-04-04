@@ -57,7 +57,7 @@ export default function Home({
           })}
         </div>
         <Link href="/blog">
-          <a className="mt-8 flex h-6 rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
+          <a className="mt-8 flex h-6 items-center rounded-lg leading-7 text-gray-600 transition-all hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">
             Read all posts
             <svg
               xmlns="http://www.w3.org/2000/svg"
