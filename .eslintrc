@@ -2,7 +2,7 @@
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "prettier", "simple-import-sort"],
   "extends": [
-    "next/core-web-vitals",
+    "next",
     "prettier",
     "eslint:recommended",
     "plugin:prettier/recommended",
@@ -10,6 +10,7 @@
   ],
   "rules": {
     "simple-import-sort/exports": "warn",
-    "simple-import-sort/imports": "warn"
+    "simple-import-sort/imports": "warn",
+    "react/no-unescaped-entities": "off"
   }
 }
