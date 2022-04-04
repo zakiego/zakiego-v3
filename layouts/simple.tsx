@@ -37,7 +37,7 @@ export default function SimpleLayout({
             {post.readingTime.text}
           </p>
         </div>
-        <div className="prose w-full dark:prose-dark">{children}</div>
+        <div className="prose mt-4 w-full dark:prose-dark ">{children}</div>
       </article>
     </Container>
   );
