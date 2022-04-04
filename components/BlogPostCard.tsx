@@ -1,15 +1,15 @@
 import cn from 'classnames';
-import fetcher from 'lib/fetcher';
-import { Views } from 'lib/types';
+// import fetcher from 'lib/fetcher';
+// import { Views } from 'lib/types';
 import Link from 'next/link';
-import useSWR from 'swr';
+// import useSWR from 'swr';
 
 export default function BlogPostCard({ title, slug, gradient }) {
-  const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
-  const views = data?.total;
+  // const { data } = useSWR<Views>(`/api/views/${slug}`, fetcher);
+  // const views = data?.total;
 
   return (
-    <Link href={`/blog/${slug}`}>
+    <Link href={slug}>
       <a
         className={cn(
           'transform transition-all hover:scale-[1.01]',
@@ -19,11 +19,11 @@ export default function BlogPostCard({ title, slug, gradient }) {
       >
         <div className="flex h-full flex-col justify-between rounded-lg bg-white p-4 dark:bg-gray-900">
           <div className="flex flex-col justify-between md:flex-row">
-            <h4 className="mb-6 w-full text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100 sm:mb-10 md:text-lg">
+            <h4 className="w-full text-lg font-medium tracking-tight text-gray-900 dark:text-gray-100  md:text-lg">
               {title}
             </h4>
           </div>
-          <div className="capsize flex items-center text-gray-800 dark:text-gray-200">
+          {/* <div className="capsize flex items-center text-gray-800 dark:text-gray-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -47,7 +47,7 @@ export default function BlogPostCard({ title, slug, gradient }) {
             <span className="capsize ml-2 align-baseline">
               {views ? new Number(views).toLocaleString() : '–––'}
             </span>
-          </div>
+          </div> */}
         </div>
       </a>
     </Link>
