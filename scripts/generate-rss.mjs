@@ -1,19 +1,19 @@
-import { siteconfig } from '~/siteconfig';
 import { writeFileSync } from 'fs';
 import RSS from 'rss';
+
 import { allBlogs } from '../.contentlayer/generated/allBlogs.mjs';
 
 async function generate() {
   const feed = new RSS({
-    title: siteconfig.profile.name,
-    site_url: 'https://leerob.io',
-    feed_url: 'https://leerob.io/feed.xml'
+    title: 'M. Zakiyuddin Munziri',
+    site_url: 'https://zakiego.my.id',
+    feed_url: 'https://zakiego.my.id/feed.xml'
   });
 
   allBlogs.map((post) => {
     feed.item({
       title: post.title,
-      url: `https://leerob.io/blog/${post.slug}`,
+      url: `https://zakiego.my.id/blog/${post.slug}`,
       date: post.publishedAt,
       description: post.summary
     });
