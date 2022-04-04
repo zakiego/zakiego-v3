@@ -4,6 +4,12 @@ export const siteconfig = {
     name: 'M. Zakiyuddin Munziri',
     shortDescription: 'Generalist. Fullstack developer. Social science student.'
   },
+  menuMobile: [
+    { display: 'Home', href: '/' },
+    { display: 'Blog', href: '/blog' },
+    { display: 'Snippets', href: '/snippets' },
+    { display: 'Uses', href: 'uses' }
+  ],
   socials: [
     {
       name: 'Twitter',

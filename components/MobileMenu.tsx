@@ -4,6 +4,8 @@ import { useEffect, useState } from 'react';
 import styles from 'styles/mobile-menu.module.css';
 import useDelayedRender from 'use-delayed-render';
 
+import { siteconfig } from '~/siteconfig';
+
 export default function MobileMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { mounted: isMenuMounted, rendered: isMenuRendered } = useDelayedRender(
@@ -49,70 +51,21 @@ export default function MobileMenu() {
             isMenuRendered && styles.menuRendered
           )}
         >
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '150ms' }}
-          >
-            <Link href="/">
-              <a className="flex w-auto pb-4">Home</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '175ms' }}
-          >
-            <Link href="/guestbook">
-              <a className="flex w-auto pb-4">Guestbook</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '200ms' }}
-          >
-            <Link href="/dashboard">
-              <a className="flex w-auto pb-4">Dashboard</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '250ms' }}
-          >
-            <Link href="/blog">
-              <a className="flex w-auto pb-4">Blog</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '275ms' }}
-          >
-            <Link href="/snippets">
-              <a className="flex w-auto pb-4">Snippets</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '300ms' }}
-          >
-            <Link href="/newsletter">
-              <a className="flex w-auto pb-4">Newsletter</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '325ms' }}
-          >
-            <Link href="/tweets">
-              <a className="flex w-auto pb-4">Tweets</a>
-            </Link>
-          </li>
-          <li
-            className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
-            style={{ transitionDelay: '350ms' }}
-          >
-            <Link href="/uses">
-              <a className="flex w-auto pb-4">Uses</a>
-            </Link>
-          </li>
+          {siteconfig.menuMobile.map((menu, id) => {
+            const init = 175;
+            const delay = `${init + id * 25}ms`;
+            return (
+              <li
+                key={menu.display}
+                className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
+                style={{ transitionDelay: delay }}
+              >
+                <Link href="/">
+                  <a className="flex w-auto pb-4">{menu.display}</a>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       )}
     </>
@@ -138,6 +91,13 @@ function MenuIcon(props: JSX.IntrinsicElements['svg']) {
       />
       <path
         d="M2.5 12.5H17.5"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M2.5 17.5H17.5"
         stroke="currentColor"
         strokeWidth="1.5"
         strokeLinecap="round"
