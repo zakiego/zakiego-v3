@@ -1,4 +1,9 @@
 export const siteconfig = {
+  profile: {
+    aka: 'Zakiego',
+    name: 'M. Zakiyuddin Munziri',
+    shortDescription: 'Generalist. Fullstack developer. Social science student.'
+  },
   socials: [
     {
       name: 'Twitter',
