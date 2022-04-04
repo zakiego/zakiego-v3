@@ -7,12 +7,13 @@ import Unsplash from 'components/metrics/Unsplash';
 import YouTube from 'components/metrics/Youtube';
 import TopTracks from 'components/TopTracks';
 import Link from 'next/link';
+
 import { siteconfig } from '~/siteconfig';
 
 export default function Dashboard() {
   return (
     <Container
-      title={`Dashboard – ${siteconfig.profile.name}`}>
+      title={`Dashboard – ${siteconfig.profile.name}`}
       description="My personal dashboard, built with Next.js API routes deployed as serverless functions."
     >
       <div className="mx-auto mb-16 flex max-w-2xl flex-col items-start justify-center">
