@@ -76,7 +76,8 @@ const OtherPage = defineDocumentType(() => ({
   contentType: 'mdx',
   fields: {
     title: { type: 'string', required: true },
-    publishedAt: { type: 'string', required: true }
+    summary: { type: 'string', required: false },
+    publishedAt: { type: 'string', required: false }
   },
   computedFields
 }));
