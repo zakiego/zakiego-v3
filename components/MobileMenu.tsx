@@ -60,7 +60,7 @@ export default function MobileMenu() {
                 className="border-b border-gray-300 text-sm font-semibold text-gray-900 dark:border-gray-700 dark:text-gray-100"
                 style={{ transitionDelay: delay }}
               >
-                <Link href="/">
+                <Link href={menu.href}>
                   <a className="flex w-auto pb-4">{menu.display}</a>
                 </Link>
               </li>
