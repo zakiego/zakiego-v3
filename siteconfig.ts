@@ -10,6 +10,7 @@ export const siteconfig = {
   menuMobile: [
     { display: 'Home', href: '/' },
     { display: 'Blog', href: '/blog' },
+    { display: 'What I Read Today', href: '/read' },
     { display: 'Snippets', href: '/snippets' },
     { display: 'Uses', href: 'uses' }
   ],
