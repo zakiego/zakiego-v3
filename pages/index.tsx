@@ -81,13 +81,14 @@ export default function Home({
 }
 
 export async function getStaticProps() {
-  const posts = await fetch('https://v3.zakiego.my.id/api/blog')
+  const posts = await fetch(
+    'https://blog-zakiego-xml-to-json.zakiego.workers.dev'
+  )
     .then((resp) => resp.json())
     .then(({ data }) => data.slice(0, 3));
 
   return {
-    props: { posts },
-    revalidate: 300 // In seconds
+    props: { posts }
   };
 }
 

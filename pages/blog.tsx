@@ -92,18 +92,12 @@ export default function Blog({
 
 export async function getStaticProps() {
   const posts = (
-    await fetch('https://v3.zakiego.my.id/api/blog').then((resp) => resp.json())
+    await fetch('https://blog-zakiego-xml-to-json.zakiego.workers.dev').then(
+      (resp) => resp.json()
+    )
   ).data;
 
-  // const posts = allBlogs
-  //   .map((post) => pick(post, ['slug', 'title', 'summary', 'publishedAt']))
-  //   .sort(
-  //     (a, b) =>
-  //       Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
-  //   );
-
   return {
-    props: { posts },
-    revalidate: 300 // In seconds
+    props: { posts }
   };
 }
