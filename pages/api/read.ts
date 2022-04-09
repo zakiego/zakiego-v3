@@ -47,5 +47,5 @@ export default async function handler(
     };
   });
 
-  return res.json({ data: fullText });
+  return res.json({ version: 1, data: fullText });
 }
