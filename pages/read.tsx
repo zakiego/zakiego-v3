@@ -71,7 +71,9 @@ export default function About({ articles }) {
 }
 
 export async function getStaticProps() {
-  const { data } = await fetch('https://v3-beta.zakiego.my.id/api/read');
+  const { data } = await fetch('https://v3-beta.zakiego.my.id/api/read').then(
+    (resp) => resp.json()
+  );
 
   return { props: { fullText: data } };
 }
