@@ -57,11 +57,11 @@ export default function About({ articles }) {
         {filteredBlogPosts.map((article) => {
           return (
             <ReadCard
-              key={article.url}
+              key={article.link}
               title={article.title}
               description={article.description}
-              date={article.date}
-              url={article.url}
+              date={article.dateText}
+              url={article.link}
             />
           );
         })}
@@ -71,45 +71,20 @@ export default function About({ articles }) {
 }
 
 export async function getStaticProps() {
-  type Message = {
+  type Article = {
     id: number;
-    link: string;
+    title: string;
+    description: string;
     date: string;
+    dateText: string;
+    link: string;
+    fullText: string;
   };
 
   const { data, error } = await supabase
-    .from<Message>('what_i_read_today')
-    .select('id, link, date')
+    .from<Article>('what_i_read_today')
+    .select()
     .order('id', { ascending: false });
-  // .limit(5);
 
-  const articles = await Promise.all(
-    data.map(async (article) => {
-      return {
-        ...(await getMetaData(article.link)),
-        ...{
-          date: new Date(article.date).toLocaleDateString('id-ID', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric'
-          })
-        }
-      };
-    })
-  );
-
-  const fullText = articles.map((article) => {
-    return {
-      ...article,
-      ...{
-        fullText: `${article.title} ${article.description} ${article.url} ${article.date}`
-      }
-    };
-  });
-
-  return { props: { articles: JSON.parse(JSON.stringify(fullText)) } };
+  return { props: { articles: data } };
 }
