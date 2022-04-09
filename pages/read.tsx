@@ -71,45 +71,7 @@ export default function About({ articles }) {
 }
 
 export async function getStaticProps() {
-  type Message = {
-    id: number;
-    link: string;
-    date: string;
-  };
+  const { data } = await fetch('https://v3-beta.zakiego.my.id/api/read');
 
-  const { data, error } = await supabase
-    .from<Message>('what_i_read_today')
-    .select('id, link, date')
-    .order('id', { ascending: false });
-  // .limit(5);
-
-  const articles = await Promise.all(
-    data.map(async (article) => {
-      return {
-        ...(await getMetaData(article.link)),
-        ...{
-          date: new Date(article.date).toLocaleDateString('id-ID', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: 'numeric',
-            minute: 'numeric',
-            second: 'numeric'
-          })
-        }
-      };
-    })
-  );
-
-  const fullText = articles.map((article) => {
-    return {
-      ...article,
-      ...{
-        fullText: `${article.title} ${article.description} ${article.url} ${article.date}`
-      }
-    };
-  });
-
-  return { props: { articles: JSON.parse(JSON.stringify(fullText)) } };
+  return { props: { fullText: data } };
 }
