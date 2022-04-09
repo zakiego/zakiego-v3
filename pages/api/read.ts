@@ -38,14 +38,14 @@ export default async function handler(
     })
   );
 
-  // const fullText = articles.map((article) => {
-  //   return {
-  //     ...article,
-  //     ...{
-  //       fullText: `${article.title} ${article.description} ${article.url} ${article.date}`
-  //     }
-  //   };
-  // });
+  const fullText = articles.map((article) => {
+    return {
+      ...article,
+      ...{
+        fullText: `${article.title} ${article.description} ${article.url} ${article.date}`
+      }
+    };
+  });
 
   return res.json(articles);
 }
