@@ -1,8 +1,6 @@
 import Image from 'next/image';
 
-export default function ReadCard({ url, title, description, date }) {
-  // const formatDate = new Date(date);
-
+export default function ReadCard({ url, title, description, date, caption }) {
   return (
     <a
       href={url}
@@ -18,16 +16,7 @@ export default function ReadCard({ url, title, description, date }) {
         {url}
       </p>
       <p className="mt-1 text-xs font-light text-gray-700 opacity-40 dark:text-gray-400">
-        Dibaca pada {date}
-        {/* {formatDate.toLocaleDateString('id-ID', {
-          weekday: 'long',
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-          hour: 'numeric',
-          minute: 'numeric',
-          second: 'numeric'
-        })} */}
+        {caption} {date}
       </p>
     </a>
   );
