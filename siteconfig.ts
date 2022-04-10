@@ -10,10 +10,38 @@ export const siteconfig = {
   menuMobile: [
     { display: 'Home', href: '/' },
     { display: 'Blog', href: '/blog' },
+    { display: 'About', href: '/about' },
+    // { display: 'Uses', href: 'uses' },
+    // { display: 'Snippets', href: '/snippets' },
     { display: 'What I Read Today', href: '/read' },
-    { display: 'Snippets', href: '/snippets' },
-    { display: 'Uses', href: 'uses' }
+    { display: 'How to Work With Me', href: 'readme' }
   ],
+  footer: {
+    leftMenu: [
+      { display: 'Home', href: '/' },
+      { display: 'Blog', href: '/blog' },
+      { display: 'About', href: '/about' }
+    ],
+    centerMenu: [
+      {
+        href: 'https://twitter.com/prasastipagi',
+        display: 'Twitter'
+      },
+      {
+        href: 'https://github.com/zakiego',
+        display: 'Github'
+      },
+      {
+        href: 'https://www.linkedin.com/in/mzakiyuddin',
+        display: 'LinkedIn'
+      }
+    ],
+    rightMenu: [
+      { display: 'Uses', href: '/uses' },
+      { display: 'What I Read Today', href: '/read' },
+      { display: 'How to Work With Me', href: '/readme' }
+    ]
+  },
   socials: [
     {
       name: 'Twitter',
