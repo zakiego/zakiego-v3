@@ -20,7 +20,8 @@ export const siteconfig = {
     leftMenu: [
       { display: 'Home', href: '/' },
       { display: 'Blog', href: '/blog' },
-      { display: 'About', href: '/about' }
+      { display: 'About', href: '/about' },
+      { display: 'Podcast', href: '/podcast' }
     ],
     centerMenu: [
       {
