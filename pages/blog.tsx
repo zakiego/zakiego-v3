@@ -15,15 +15,10 @@ export default function Blog({
   return (
     <ReadLayout
       title="Blog"
-      summary="Thoughts on the software industry, programming, tech, videography, music, and my personal life."
+      summary="Menulis untuk meninggalkan jejak. Sampai suatu hari ada yang berkata, Zaki telah mati. Namun tulisannya tetap abadi."
     >
       <p className="mb-4 text-gray-600 dark:text-gray-400">
-        {`Sejak awal 2022, secara tidak sengaja, saya mulai memiliki kebiasaan untuk membaca artikel`}{' '}
-        <a href=" https://open.spotify.com/episode/1RPnod8fSdBcuLi3u7XSt0">
-          setiap hari
-        </a>
-        .{' '}
-        {`Tak terasa. Hingga hari ini, ada ${posts.length} artikel yang telah dibaca. Untuk menyimpan bacaan tersebut agar tertata dengan rapi, dibuatlah halaman ini.`}
+        {`Menulis untuk meninggalkan jejak. Sampai suatu hari ada yang berkata, Zaki telah mati. Namun tulisannya tetap abadi.`}
       </p>
       <div className="relative mb-4 w-full">
         <input
