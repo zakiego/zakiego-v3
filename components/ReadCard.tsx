@@ -1,10 +1,26 @@
 import Image from 'next/image';
 
-export default function ReadCard({ url, title, description, date, caption }) {
+interface Read {
+  url: string;
+  title: string;
+  description: string;
+  date: string;
+  caption: string;
+}
+
+export default function ReadCard({
+  url,
+  title,
+  description,
+  date,
+  caption
+}: Read) {
   return (
     <a
       href={url}
+      target="_blank"
       className="border-grey-200 w-full rounded-xl border bg-white p-4 no-underline transition-colors ease-in-out hover:bg-gray-200 dark:border-gray-800 dark:bg-gray-900 dark:hover:bg-gray-800"
+      rel="noreferrer"
     >
       <h3 className="mt-2 text-left text-lg font-bold text-gray-900 dark:text-gray-100">
         {title}
