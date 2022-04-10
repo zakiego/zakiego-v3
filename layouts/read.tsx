@@ -7,19 +7,23 @@ import React from 'react';
 // import ViewCounter from '~/components/ViewCounter';
 import { siteconfig } from '~/siteconfig';
 
-export default function ReadLayout({ children }: { children: ReactNode }) {
-  const meta = {
-    title: 'What I Read Today',
-    summary: ''
-  };
+export default function ReadLayout({
+  children,
+  title,
+  summary
+}: {
+  children: ReactNode;
+  title: string;
+  summary: string;
+}) {
   return (
     <Container
-      title={`${meta.title} – ${siteconfig.profile.name}`}
-      description={meta.summary}
+      title={`${title} – ${siteconfig.profile.name}`}
+      description={summary}
     >
       <article className="mx-auto mb-16 flex w-full max-w-2xl flex-col items-start justify-center">
         <h1 className="mb-4 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-          {meta.title}
+          {title}
         </h1>
         <div className="mt-2 flex w-full flex-col items-start justify-between md:flex-row md:items-center">
           <div className="flex items-center">
