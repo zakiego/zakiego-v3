@@ -9,12 +9,12 @@ export const siteconfig = {
   },
   menuMobile: [
     { display: 'Home', href: '/' },
-    { display: 'Blog', href: '/blog' },
     { display: 'About', href: '/about' },
+    { display: 'Blog', href: '/blog' },
     // { display: 'Uses', href: 'uses' },
     // { display: 'Snippets', href: '/snippets' },
     { display: 'What I Read Today', href: '/read' },
-    { display: 'How to Work With Me', href: 'readme' }
+    { display: 'How to Work With Me', href: '/readme' }
   ],
   footer: {
     leftMenu: [
