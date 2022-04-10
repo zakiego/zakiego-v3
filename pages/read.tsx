@@ -1,4 +1,3 @@
-import getMetaData from 'metadata-scraper';
 import { useState } from 'react';
 
 import ReadCard from '~/components/ReadCard';
@@ -12,7 +11,10 @@ export default function About({ articles }) {
   );
 
   return (
-    <ReadLayout>
+    <ReadLayout
+      title="What I Read Today"
+      summary="Arsip artikel yang telah dibaca, dibuat agar tertata dengan rapi."
+    >
       <p className="mb-4 text-gray-600 dark:text-gray-400">
         {`Sejak awal 2022, secara tidak sengaja, saya mulai memiliki kebiasaan untuk membaca artikel`}{' '}
         <a href=" https://open.spotify.com/episode/1RPnod8fSdBcuLi3u7XSt0">
@@ -46,14 +48,15 @@ export default function About({ articles }) {
       </div>
 
       <div className="my-2 mt-4 grid w-full grid-cols-1 gap-4 ">
-        {!filteredBlogPosts.length && (
-          <p className="mb-4 text-gray-600 dark:text-gray-400">
-            No posts found.
-          </p>
-        )}
         <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
           All Articles
         </h3>
+        {!filteredBlogPosts.length && (
+          <p className="mb-4 text-gray-600 dark:text-gray-400">
+            No articles found.
+          </p>
+        )}
+
         {filteredBlogPosts.map((article) => {
           return (
             <ReadCard
@@ -62,6 +65,7 @@ export default function About({ articles }) {
               description={article.description}
               date={article.dateText}
               url={article.link}
+              caption={'Dibaca pada '}
             />
           );
         })}
