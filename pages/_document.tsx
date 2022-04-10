@@ -46,10 +46,10 @@ export default function Document(props) {
           content="/static/favicons/browserconfig.xml"
           name="msapplication-config"
         />
-        <meta content="14d2e73487fa6c71" name="yandex-verification" />
+        <meta name="yandex-verification" content="b5115768f8b947f6" />
         <meta
-          content="eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw"
           name="google-site-verification"
+          content="r3y8BHTxsjVGrw_qSHXuYgXDTQcnx78Ija47b3TWozw"
         />
       </Head>
       <body className="bg-white text-white dark:bg-black dark:text-black">
