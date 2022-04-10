@@ -1,9 +1,5 @@
 import ConsCard from 'components/ConsCard';
 import ImageWithTheme from 'components/ImageWithTheme';
-import Analytics from 'components/metrics/Analytics';
-import Gumroad from 'components/metrics/Gumroad';
-import Unsplash from 'components/metrics/Unsplash';
-import YouTube from 'components/metrics/Youtube';
 import ProsCard from 'components/ProsCard';
 import Step from 'components/Step';
 import Image from 'next/image';
@@ -42,13 +38,9 @@ const MDXComponents = {
   ImageWithTheme,
   a: CustomLink,
   Callout,
-  Analytics,
   ConsCard,
-  Gumroad,
   ProsCard,
-  Step,
-  Unsplash,
-  YouTube
+  Step
 };
 
 export default MDXComponents;
