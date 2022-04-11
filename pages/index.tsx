@@ -17,9 +17,11 @@ export default function Home({
       <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
         <div className="flex flex-col-reverse items-start sm:flex-row">
           <div className="flex flex-col pr-8">
-            <h1 className="mb-1 text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
-              {siteconfig.profile.aka}
-            </h1>
+            <Link href="/about" passHref>
+              <h1 className="mb-1 cursor-pointer text-3xl font-bold tracking-tight text-black dark:text-white md:text-5xl">
+                {siteconfig.profile.aka}
+              </h1>
+            </Link>
             <h2 className="mb-4 text-gray-700 dark:text-gray-200">
               {'// '}
               {siteconfig.profile.name}
