@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { withContentlayer } = require('next-contentlayer');
 
 /**
@@ -9,7 +10,9 @@ module.exports = withContentlayer()({
   images: {
     domains: [
       'i.scdn.co', // Spotify Album Art
-      'pbs.twimg.com' // Twitter Profile Picture
+      'pbs.twimg.com', // Twitter Profile Picture
+      'hqxduecuxrozqlaicqkg.supabase.in',
+      'hqxduecuxrozqlaicqkg.supabase.co'
     ]
   },
   webpack: (config, { dev, isServer }) => {
