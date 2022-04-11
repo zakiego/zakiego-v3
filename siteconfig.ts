@@ -10,7 +10,7 @@ export const siteconfig = {
   topNavBar: [
     { display: 'Home', href: '/' },
     { display: 'About', href: '/about' },
-    // { display: 'Blog', href: '/blog' },
+    { display: 'Blog', href: '/blog' },
     // { display: 'Uses', href: 'uses' },
     // { display: 'Snippets', href: '/snippets' },
     { display: 'What I Read Today', href: '/read' },
