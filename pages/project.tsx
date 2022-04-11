@@ -12,7 +12,7 @@ export default function Projects() {
   return (
     <ReadLayout
       title="Projects"
-      summary="A collection of projects that I work on."
+      summary="Koleksi dari project yang saya kerjakan."
     >
       <p>Favorite technology stacks</p>
       <ul>
