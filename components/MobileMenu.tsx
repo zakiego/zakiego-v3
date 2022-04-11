@@ -51,7 +51,7 @@ export default function MobileMenu() {
             isMenuRendered && styles.menuRendered
           )}
         >
-          {siteconfig.menuMobile.map((menu, id) => {
+          {siteconfig.topNavBar.map((menu, id) => {
             const init = 175;
             const delay = `${init + id * 25}ms`;
             return (

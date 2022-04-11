@@ -1,5 +1,6 @@
 import NowPlaying from 'components/NowPlaying';
 import Link from 'next/link';
+
 import { siteconfig } from '~/siteconfig';
 
 const ExternalLink = ({ href, children }) => (

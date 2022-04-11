@@ -75,7 +75,7 @@ export default function Container(props) {
           </a>
           <div className="ml-[-0.60rem]">
             <MobileMenu />
-            {siteconfig.menuMobile.map((menu) => {
+            {siteconfig.topNavBar.map((menu) => {
               return (
                 <NavItem
                   key={menu.display}
