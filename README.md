@@ -1,6 +1,6 @@
 # zakiego.my.id
 
-Proyek ini menggunakan template milik Lee Robinson (https://github.com/leerob/leerob.io)
+This project uses Lee Robinson's template (https://github.com/leerob/leerob.io)
 
 # Built With
 
