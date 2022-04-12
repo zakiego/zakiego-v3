@@ -21,7 +21,8 @@ export const siteconfig = {
       { display: 'Home', href: '/' },
       { display: 'Blog', href: '/blog' },
       { display: 'About', href: '/about' },
-      { display: 'Podcast', href: '/podcast' }
+      { display: 'Podcast', href: '/podcast' },
+      { display: 'Source Code', href: 'https://github.com/zakiego/zakiego-v3' }
     ],
     centerMenu: [
       {
@@ -39,7 +40,7 @@ export const siteconfig = {
     ],
     rightMenu: [
       { display: 'Uses', href: '/uses' },
-      { display: 'Project', href: '/project' },
+      { display: 'Projects', href: '/project' },
       { display: 'What I Read Today', href: '/read' },
       { display: 'How to Work With Me', href: '/readme' }
     ]
@@ -78,14 +79,31 @@ export const siteconfig = {
     }
   ],
   techStack: [
-    { name: 'Next.js', href: 'https://nextjs.org/' },
-    { name: 'Tailwind CSS', href: 'https://tailwindcss.com/' },
-    { name: 'TypeScript', href: 'https://www.typescriptlang.org/' },
-    { name: 'Vercel', href: 'https://vercel.com/' },
-    { name: 'Prisma', href: 'https://www.prisma.io/' },
-    { name: 'PlanetScale', href: 'https://planetscale.com/' },
-    { name: 'Supabase', href: 'https://supabase.io/' },
-    { name: 'NodeJS', href: 'https://nodejs.org/' }
+    { name: 'React', href: 'https://reactjs.org/', category: 'Framework' },
+    { name: 'Next.js', href: 'https://nextjs.org/', category: 'Framework' },
+    {
+      name: 'Node.js',
+      href: 'https://nodejs.org/',
+      category: 'JavaScript runtime'
+    },
+    {
+      name: 'TypeScript',
+      href: 'https://www.typescriptlang.org/',
+      category: 'Programming language'
+    },
+    {
+      name: 'Tailwind CSS',
+      href: 'https://tailwindcss.com/',
+      category: 'Styling'
+    },
+    { name: 'Prisma', href: 'https://www.prisma.io/', category: 'ORM' },
+    {
+      name: 'PlanetScale',
+      href: 'https://planetscale.com/',
+      category: 'Database'
+    },
+    { name: 'Supabase', href: 'https://supabase.io/', category: 'Database' },
+    { name: 'Vercel', href: 'https://vercel.com/', category: 'Deployment' }
   ],
   projects: [
     {
