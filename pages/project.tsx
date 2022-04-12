@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import ReadCard from '~/components/ReadCard';
@@ -19,7 +20,12 @@ export default function Projects() {
         {siteconfig.techStack.map((tech) => {
           return (
             <li key={tech.name}>
-              <a href={tech.href}>{tech.name}</a>
+              <Link href={tech.href} passHref>
+                <div className="cursor-pointer">
+                  <span>{tech.name}</span>{' '}
+                  {tech.category ? `- ${tech.category}` : ''}
+                </div>
+              </Link>
             </li>
           );
         })}
