@@ -47,13 +47,25 @@ export default function Home({
           Featured Posts
         </h3>
         <div className="flex flex-col gap-6 md:flex-row">
-          {posts.map((post, id) => {
+          <BlogPostCard
+            key={'How to Work With Me'}
+            title={'How to Work With Me'}
+            slug={'/readme'}
+            gradient={gradient[0]}
+          />
+          <BlogPostCard
+            key={'What I Read Today'}
+            title={'What I Read Today'}
+            slug={'/read'}
+            gradient={gradient[1]}
+          />
+          {posts.map((post) => {
             return (
               <BlogPostCard
                 key={post.title}
                 title={post.title}
                 slug={post.slug}
-                gradient={gradient[id]}
+                gradient={gradient[2]}
               />
             );
           })}
@@ -87,7 +99,7 @@ export async function getStaticProps() {
     'https://blog-zakiego-xml-to-json.zakiego.workers.dev'
   )
     .then((resp) => resp.json())
-    .then(({ data }) => data.slice(0, 3));
+    .then(({ data }) => data.slice(0, 1));
 
   return {
     props: { posts }
