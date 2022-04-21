@@ -114,6 +114,13 @@ export const siteconfig = {
       private: false
     },
     {
+      url: 'http://acak-aja.vercel.app',
+      title: 'Acak Aja',
+      description: null,
+      img: 'https://hqxduecuxrozqlaicqkg.supabase.co/storage/v1/object/public/zakiegomyid/Acak.png',
+      private: false
+    },
+    {
       url: 'https://murottal.my.id',
       title: 'Kumpulan Murottal',
       description: null,
