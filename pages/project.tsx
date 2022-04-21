@@ -44,6 +44,8 @@ export default function Projects() {
                 height={332.2}
                 width={544.5}
                 className="rounded-3xl"
+                quality={100}
+                unoptimized={true}
               />
               <h3 className="mt-3 text-center">{project.title}</h3>
               <div className="-mt-4">
