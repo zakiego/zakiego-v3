@@ -28,7 +28,7 @@ export default function NewsletterLayout({
               alt={siteconfig.profile.name}
               height={24}
               width={24}
-              src="/avatar.jpg"
+              src={siteconfig.profile.avatar}
               className="rounded-full"
             />
             <p className="ml-2 text-sm text-gray-700 dark:text-gray-300">

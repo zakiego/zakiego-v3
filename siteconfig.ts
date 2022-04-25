@@ -5,7 +5,8 @@ export const siteconfig = {
     name: 'M. Zakiyuddin Munziri',
     shortDescription:
       'Generalist. Fullstack developer. Social science student.',
-    twitter: '@prasastipagi'
+    twitter: '@prasastipagi',
+    avatar: '/avatar.jpg'
   },
   topNavBar: [
     { display: 'Home', href: '/' },
