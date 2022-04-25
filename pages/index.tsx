@@ -32,13 +32,13 @@ export default function Home({
               Indonesia.
             </p>
           </div>
-          <div className="relative mb-8 mr-auto w-[140px] sm:mb-0 sm:w-[200px]">
+          <div className="relative mb-8 mr-auto w-[160px] sm:mb-0 sm:w-[275px]">
             <Image
               alt={siteconfig.profile.name}
-              height={200}
-              width={200}
+              height={500}
+              width={500}
               unoptimized={true}
-              src="/avatar.jpg"
+              src={siteconfig.profile.avatar}
               className="rounded-full"
             />
           </div>
