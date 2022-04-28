@@ -37,6 +37,10 @@
     {
       "source": "/tipsos",
       "destination": "https://www.youtube.com/watch?v=YAhfTMmrXT4"
+    },
+    {
+      "source": "/bot",
+      "destination": "https://ego-discord-bot.herokuapp.com/"
     }
   ]
 }
