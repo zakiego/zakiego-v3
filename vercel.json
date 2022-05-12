@@ -41,6 +41,10 @@
     {
       "source": "/bot",
       "destination": "https://ego-discord-bot.herokuapp.com/"
+    },
+    {
+      "source": "/notion",
+      "destination": "https://zakiego.notion.site/Template-f93486e02336498cb7dac12bc6d5876e"
     }
   ]
 }
