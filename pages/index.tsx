@@ -37,7 +37,6 @@ export default function Home({
               alt={siteconfig.profile.name}
               height={500}
               width={500}
-              unoptimized={true}
               src={siteconfig.profile.avatar}
               className="rounded-full"
             />
