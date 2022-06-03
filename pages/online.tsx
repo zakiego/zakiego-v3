@@ -17,11 +17,12 @@ export default function Online({ post }: { post: Blog }) {
 
   return (
     <SimpleLayout post={post}>
-      <Component components={components as unknown} />
-      <h3 className="mt-8 mb-4 text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
+      <h3 className="text-2xl font-bold tracking-tight text-black dark:text-white md:text-4xl">
         Status
       </h3>
       <RenderOnline data={data} error={error} />
+      <div className="mb-6" />
+      <Component components={components as unknown} />
     </SimpleLayout>
   );
 }
