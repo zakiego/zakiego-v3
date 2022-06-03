@@ -10,7 +10,7 @@ export default function About({ post }: { post: Blog }) {
 
   return (
     <SimpleLayout post={post}>
-      <Component components={components as any} />
+      <Component components={components as unknown} />
     </SimpleLayout>
   );
 }
