@@ -48,6 +48,7 @@ function RenderOnline({ data, error }: { data: Data; error: boolean }) {
       {data.data.map((item) => {
         const date = new Date(Date.parse(item.updated_at));
         const dif = Math.round((utc.getTime() - date.getTime()) / 1000);
+        const isOnline = dif < 300;
 
         return (
           <div
@@ -58,22 +59,25 @@ function RenderOnline({ data, error }: { data: Data; error: boolean }) {
               {item.device.replace('-', ' ')}
             </div>
             <div className="mt-3">
-              <Status second={dif} />
+              <Status isOnline={isOnline} />
             </div>
             <div className="mdtext-sm mt-0.5 text-xs italic opacity-60">
               Terakhir dilihat {secormin(dif)}
             </div>
-            <div className="mt-4 text-sm opacity-90">
-              Aplikasi yang berjalan:
-            </div>
+            {isOnline && (
+              <div className="mt-4 text-sm opacity-90">
+                Aplikasi yang berjalan:
+              </div>
+            )}
             <div>
-              {splitter(item.status).map((item, id) => {
-                return (
-                  <li className="text-xs opacity-75 md:text-sm" key={id}>
-                    {item.trim()}
-                  </li>
-                );
-              })}
+              {isOnline &&
+                splitter(item.status).map((item, id) => {
+                  return (
+                    <li className="text-xs opacity-75 md:text-sm" key={id}>
+                      {item.trim()}
+                    </li>
+                  );
+                })}
             </div>
           </div>
         );
@@ -91,8 +95,8 @@ function splitter(description: string) {
   return [description];
 }
 
-function Status({ second }: { second: number }) {
-  if (second < 300) {
+function Status({ isOnline }: { isOnline: boolean }) {
+  if (isOnline) {
     return (
       <div className="flex items-center space-x-1 md:space-x-2">
         <div className="rounded-full bg-gray-200 ">
