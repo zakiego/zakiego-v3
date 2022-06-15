@@ -3,8 +3,7 @@ export const siteconfig = {
   profile: {
     aka: 'Zakiego',
     name: 'M. Zakiyuddin Munziri',
-    shortDescription:
-      'Generalist. Fullstack developer. Social science student.',
+    shortDescription: 'Generalist. Software engineer. Social science student.',
     twitter: '@prasastipagi',
     avatar: '/avatar.jpg'
   },
